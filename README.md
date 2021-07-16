@@ -1,30 +1,35 @@
 # TransD
-### Programming language
 
-Transd is a general purpose programming language with strong emphasis on:
+## What is Transd?
 
-* embeddability
-* structured data processing
-* compactness of implementation
+Transd is a programming language, implemented as an ultra-compact C++ embeddable library. Its main purpose is to serve as "front end" language: a tool for processing user input, for writing and reading complex configuration files, for customizing and extending the functionality of your program by the user, for processing and importing external textual data, for scripting, etc. 
 
-and as additional design goals:
+## What is Transd's unique offering?
 
-* speed
-* safety
-* syntax simplicity and readability
+In two C++ source files with no external dependencies you get a multi-platform, fast, full featured powerful programming language with many modern features. These features include classes, data query language, first-class functions, exceptions, etc.
 
-Presently, Transd's most viable sphere of application is C++ programs where it can
-be used as an embeddable component for processing structured data of various kinds:
-configuration files, log files, tabulated data, records, and so on. All it takes to
-embed Transd into a C++ application is to add to sources one "cpp" file and one
-"hpp" file. (Yes, the whole Transd implementation is contained in two files.)
+## Who are potential users of Transd?
 
-Also, the language can be used in the usual way by running programs written on
-Transd from the command line with the help of command line launcher.
+If you are a C++ developer, chances are Transd can be of use for your program as a compact, multi-platform and multi-purpose tool for extending, configuring and maintaining your program at post-compile time. Basically, you include in your program a full featured language interpreter with which your program can run and use the computation results of any program written on Transd.
 
-The language currently is under intensive development, but can already be used in
-non-production environments.
+## Documentation
 
-A quick example of processing data with Transd can be seen here:
+[List of main features of language](https://transd.org/highlights.html)
 
-[A quick look into the language for programmers](https://transd-lang.github.io/quick.html)
+[Transd Programming guide](https://transd.org/doc/split/mainguide.html)
+
+[Trabsd Reference manual](https://transd.org/doc/split/main.html)
+
+## Code samples
+
+[Transd Code Samples](https://transd.org/doc/split/maincode.html)
+
+## REPL command line interpreter
+
+[FREND](https://github.com/transd-lang/frend)
+
+## Website
+
+[https://transd.org](https://transd.org)
+
+
