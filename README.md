@@ -2,7 +2,7 @@
 
 ## What is Transd?
 
-Transd is a programming language, implemented as an ultra-compact C++ embeddable library. Its main purpose is to serve as "front end" language: a tool for processing user input, for writing and reading complex configuration files, for customizing and extending the functionality of your program by the user, for processing and importing external textual data, for scripting, etc. 
+Transd is a programming language, implemented as an ultra-compact C++ embeddable library. Its main purpose is to serve as a "front end" language: a tool for processing user input, for writing and reading complex configuration files, for customizing and extending the functionality of your program by the user, for processing and importing external textual data, for scripting, etc. 
 
 ## What is Transd's unique offering?
 
@@ -18,7 +18,7 @@ If you are a C++ developer, chances are Transd can be of use for your program as
 
 [Transd Programming guide](https://transd.org/doc/split/mainguide.html)
 
-[Trabsd Reference manual](https://transd.org/doc/split/main.html)
+[Transd Reference manual](https://transd.org/doc/split/main.html)
 
 ## Code samples
 
