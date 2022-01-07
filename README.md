@@ -1,20 +1,20 @@
-# TransD
+# Welcome to Transd Programming Language
 
-## What is Transd?
+ Transd is a statically typed, general purpose, multi-paradigm programming language, which:
 
-Transd is a programming language, implemented as an ultra-compact C++ embeddable library. Its main purpose is to serve as a "front end" language: a tool for processing user input, for writing and reading complex configuration files, for customizing and extending the functionality of your program by the user, for processing and importing external textual data, for scripting, etc. 
+ * has extended functionality for data processing, such as a built-in data query language for working with tables and collections of records in a database-like fashion;
+ * has a very compact implementation (two C++ files with less than 25 KLOCS);
+ * uses an innovative execution model - virtual compilation - which doesn't include just-in-time compilation and in the same time offers a good performance.
 
-## What is Transd's unique offering?
+Currently, Transd is in intensive alpha-stage of development with the planned first 
+beta-release in the first quarter of 2022. The syntax of the language is established, though minor tweaks are possible, and the functionality is ready on  80-85%. 
+(There many examples of working short programs.)
 
-In two C++ source files with no external dependencies you get a multi-platform, fast, full featured powerful programming language with many modern features. These features include classes, data query language, first-class functions, exceptions, etc.
-
-## Who are potential users of Transd?
-
-If you are a C++ developer, chances are Transd can be of use for your program as a compact, multi-platform and multi-purpose tool for extending, configuring and maintaining your program at post-compile time. Basically, you include in your program a full featured language interpreter with which your program can run and use the computation results of any program written on Transd.
-
-## Documentation
+## Documentation (work in progress)
 
 [List of main features of language](https://transd.org/highlights.html)
+
+[Language specification]
 
 [Transd Programming guide](https://transd.org/doc/split/mainguide.html)
 
@@ -26,7 +26,7 @@ If you are a C++ developer, chances are Transd can be of use for your program as
 
 ## REPL command line interpreter
 
-[FREND](https://github.com/transd-lang/frend)
+[TREE3](https://github.com/transd-lang/tree3)
 
 ## Website
 
