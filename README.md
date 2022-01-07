@@ -1,6 +1,7 @@
-# Welcome to Transd Programming Language
+# TRANSD
+### Welcome to Transd Programming Language
 
- Transd is a statically typed, general purpose, multi-paradigm programming language, which:
+ Transd (short for Transformation and Analysis of Structured Data) is a statically typed, general purpose, multi-paradigm programming language, which:
 
  * has extended functionality for data processing, such as a built-in data query language for working with tables and collections of records in a database-like fashion;
  * has a very compact implementation (two C++ files with less than 25 KLOCS);
@@ -14,7 +15,7 @@ beta-release in the first quarter of 2022. The syntax of the language is establi
 
 [List of main features of language](https://transd.org/highlights.html)
 
-[Language specification]
+[Language specification](https://github.com/transd-lang/transd/tree/master/Specification)
 
 [Transd Programming guide](https://transd.org/doc/split/mainguide.html)
 

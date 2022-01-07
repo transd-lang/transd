@@ -10,7 +10,7 @@ Each file with Transd source code should contain a line with the Transd source c
 #lang transd
 ```
 
-The standard file name extension for Transd source files is ".td".
+The standard file name extension for Transd source files is `.td`.
 
 ## 2. Structure of Transd program
 
