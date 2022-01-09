@@ -14,7 +14,7 @@ The standard file name extension for Transd source files is `.td`.
 
 ## 2. Structure of Transd program
 
-A Transd program on the top level consists of a set (a list, where the order of elements is insignificant) of compilation units. A Transd compilation unit is a set of unit members. This set is a comma separated list of unit member declarations. Each declaration is a colon separated name/value pair. The list is enclosed in curly braces and prepended with the unit header.
+A Transd program on the top level consists of a set (a list, where the order of elements is insignificant) of compilation units. A Transd _compilation unit_ is a set of _unit members_: a comma separated list of unit _member declarations_. Each declaration is a colon separated name/value pair. The list is enclosed in curly braces and prepended with the unit header.
 
 ```
 program := compilation_unit ["," compilation_unit]+
@@ -36,6 +36,42 @@ class_header := [access_mode] "class " unit_name
 module_header := [access_mode] ["module "] unit_name
 access_mode := "public " | "secure " | "private "
 ```
+
+### Main module and start method
+
+Each Transd program should contain a module having a _start method_ assigned the role of program's "entry point", that is, the function from which the program execution begins (an analog of "main" function in C). The standard name for such method is `_start`.
+
+The module containing start method is called _main module_. A program can contain exactly one main module. The standard name for main module is `MainModule`.
+
+
+### Examples
+An example of a program having one class and one module.
+
+```
+#lang transd
+
+class Hello: {
+    s: "Hello, World!",
+    greet: (lambda (textout s))
+}
+
+module MainModule: {
+    hello: Hello(),
+    _start: (lambda (greet hello)) // <= "Hello, World!"
+}
+```
+
+
+## Modules
+Modules in Transd are containers for all program code, apart from class definitions. A program can consists of any number (one and greater) of modules. Modules have the following programming characteristics:
+
+* Each module has a name, unique in the whole program.
+* Within one module all module members are visible and accessible to each other.
+* 
+
+## Classes
+
+
 
 
 
