@@ -63,14 +63,46 @@ module MainModule: {
 
 
 ## Modules
-Modules in Transd are containers for all program code, apart from class definitions. A program can consists of any number (one and greater) of modules. Modules have the following programming characteristics:
+Modules in Transd are containers for all program code, apart from class definitions. A program can consists of any number (one and greater) of modules. 
 
-* Each module has a name, unique in the whole program.
-* Within one module all module members are visible and accessible to each other.
-* 
+Modules bear properies that make them similar both to namespaces and to objects.
+
+Modules resemble objects because they have members, which are of two kinds: data members and function members. (In Transd documentation, data members are termed _fields_, function members are termed _methods_.) Modules have access modes and can restrict access to their members from other modules. Also, modules can have initialization functions, that run at loading modules.
+
+Modules resemble namespaces because their structure cannot be changed at run-time: their members cannot be removed or added. Also modules cannot be referenced as objects: they cannot be copied, assigned, passed as arguments to or returned from functions. Although, modules can be dynamically loaded and unloaded at runtime. If anything, modules can be compared to strengthened singleton objects.
+
+Each module has a name, which should be unique in the whole program.
+
+Modules are only top-level and cannot be nested.
+
+### Visibility and access mode
+
+Within one module all module members are visible and accessible to each other by their unqualified names.
+
+__Example__
+
+```
+MainModule: {
+  a: 0, b: 0,
+  sum: (lambda (ret (+ a b))) 
+  _start: (lambda (= a 1) (= b 2) (textout (sum))) // <= 3
+}
+```
+
+
+* By default, module members are not visible and not accesible to other modules.
+* By definig access control rules for a module, the programmer can allow access to some or to all module members for some or for all other modules.
+* In order to access members in other modules, the "import" directive needs to be placed within the accessing module definition.
+* There are three standard access modes for modules, which can be used for granting or restricting access to module members without defining access rules:
+  1. _public_ - allow access to all module members (fields and methods).
+  2. _private_ - deny access to module's fields, allow access to module's methods.
+  3. _secure_ - deny access to all module's members.
+
+
+
 
 ## Classes
-
+Classes in Transd, like in many other languages, are templates for 
 
 
 
