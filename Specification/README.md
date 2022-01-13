@@ -1,5 +1,7 @@
 # Transd Language Specification
 
+(Working draft)
+
 ## 1. Source code
 
 Source code of Transd programs is stored in text files in UTF-8 encoding without Byte Order Mark (BOM).
@@ -101,8 +103,10 @@ MainModule: {
 
 
 
-## Classes
-Classes in Transd, like in many other languages, are templates for 
+## Classes and objects
+ Object in Transd is a set of data variables along with set of functions that operate on those variables. From this description one can conclude, that objects and modules in Transd are somewhat similar. And they indeed are similar, the modules being, actually, special objects. The differences of modules from plain objects make them a separate topic of documentation, and what further is said about objects and classes is not neccesseraly relates to modules.
+
+Classes in Transd, like in many other languages, are templates for creating objects.
 
 
 
