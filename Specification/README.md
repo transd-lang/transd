@@ -22,8 +22,8 @@ A Transd program on the top level consists of a set (a list, where the order of 
 program := compilation_unit ["," compilation_unit]+
 compilation_unit := unit_header ": {" unit_member_list "}"
 unit_member_list := unit_member_declaration ["," unit_member_declaration]+
-unit_member_declaration := member_name ":" member_definition
-member_name := identifier
+unit_member_declaration := MEMBER_NAME ":" member_definition
+member_name := IDENTIFIER
 member_definition := field_definition | method_definition
 ```
 
@@ -34,9 +34,9 @@ Compilation units are of two kinds: modules and classes. Syntactically they diff
 
 ```
 unit_header := class_header | module_header
-class_header := [access_mode] "class " unit_name
-module_header := [access_mode] ["module "] unit_name
-access_mode := "public " | "secure " | "private "
+class_header := [ACCESS_MODE_SPECIFIER] "class " UNIT_NAME
+module_header := [ACCESS_MODE_SPECIFIER] ["module "] UNIT_NAME
+ACCESS_MODE_SPECIFIER := "public " | "secure " | "private "
 ```
 
 ### Main module and start method
@@ -106,7 +106,20 @@ MainModule: {
 ## Classes and objects
  Object in Transd is a set of data variables along with set of functions that operate on those variables. From this description one can conclude, that objects and modules in Transd are somewhat similar. And they indeed are similar, the modules being, actually, special objects. The differences of modules from plain objects make them a separate topic of documentation, and what further is said about objects and classes is not neccesseraly relates to modules.
 
-Classes in Transd, like in many other languages, are templates for creating objects.
+Classes in Transd, like in many other languages, are templates for creating objects. Basically, object is a collection of fields (data members) and methods (function members), and class can be regarded as an example object, whose copies are called _instances_ of that class.
+
+Classes use the same mechanism as modules for restricting access to their members, namely, an access mode for the whole class, and/or an access control list when a more fine grained member access control is needed.
+
+The grammar for declaring a class is as follows:
+
+```
+[ACCESS_MODE_SPECIFIER] "class" CLASS_NAME ": {" class_definition "}"
+ACCESS_MODE_SPECIFIER := "public " | "secure " | "private "
+CLASS_NAME := IDENTIFIER
+class_definition := [member_list] [access_control_list]
+member_list := 
+access_control_list :=
+```
 
 
 
