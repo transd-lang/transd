@@ -7,9 +7,19 @@
  * has a very compact implementation (two C++ files with less than 25 KLOCS);
  * uses an innovative execution model - virtual compilation - which doesn't include just-in-time compilation and in the same time offers a good performance.
 
-Currently, Transd is in intensive alpha-stage of development with the planned first 
-beta-release in the first quarter of 2022. The syntax of the language is established, though minor tweaks are possible, and the functionality is ready on  80-85%. 
-(There many examples of working short programs.)
+Currently, Transd is in alpha-stage of development with the planned first 
+beta-release in the first quarter of 2022. The syntax of the language is established. The functionality is ready on  85-90%. (There are many examples of [short programs](https://transd.org/doc/rosexamp.html).)
+
+## Code snippets
+
+### List comprehension
+
+```
+(with list1 (for i in Range(22) where (not (mod i 3)) project (* i i) )
+    (textout list1)
+)
+// <= [0, 9, 36, 81, 144, 225, 324, 441] 
+```
 
 ## Documentation (work in progress)
 
@@ -23,7 +33,7 @@ beta-release in the first quarter of 2022. The syntax of the language is establi
 
 ## Code samples
 
-[Transd Code Samples](https://transd.org/doc/split/maincode.html)
+[Transd Code Samples](https://transd.org/doc/rosexamp.html)
 
 ## REPL command line interpreter
 
