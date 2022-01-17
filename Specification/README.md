@@ -36,7 +36,7 @@ Compilation units are of two kinds: modules and classes. Syntactically they diff
 unit_header := class_header | module_header
 class_header := [ACCESS_MODE_SPECIFIER] "class " UNIT_NAME
 module_header := [ACCESS_MODE_SPECIFIER] ["module "] UNIT_NAME
-ACCESS_MODE_SPECIFIER := "public " | "secure " | "private "
+ACCESS_MODE_SPECIFIER := "public" | "secure" | "private"
 ```
 
 ### Main module and start method
@@ -101,12 +101,43 @@ MainModule: {
   3. _secure_ - deny access to all module's members.
 
 
+## Variables
+Variable is a name, associated with some data object in the program. Another term for such association is _binding_: it is said, that a variable is _bound_ to an object.
 
+It's called a variable because the object that a variable is bound to can have different values (in case if the object is not constant), and because a variable during its existence can be bound to different objects (of the same type).
+
+There are two sorts of variables in Transd: data members and scoped variables.
+
+### Data member variables
+
+Data members are part of some object and exist during the whole lifetime of that object. Module data members exist for the whole running of the program just as modules themselves.
+
+Data members are introduced as fields in the definitions of objects.
+
+Example:
+
+```
+MainModule: {
+    s: String(),
+
+    _start: (λ 
+        (= s "Hello!")
+	(textout s) // <= "Hello!"
+    )
+}
+```
+A module field `s` in this example is a data member variable, which originally is bound to an empty string, and then this string is assigned a new value "Hello!".
+
+### Scoped variables
+
+Scoped variables are introduced with the scope operator `(with)`.
+
+## Functions
 
 ## Classes and objects
  Object in Transd is a set of data variables along with set of functions that operate on those variables. From this description one can conclude, that objects and modules in Transd are somewhat similar. And they indeed are similar, the modules being, actually, special objects. The differences of modules from plain objects make them a separate topic of documentation, and what further is said about objects and classes is not neccesseraly relates to modules.
 
-Classes in Transd, like in many other languages, are templates for creating objects. Basically, object is a collection of fields (data members) and methods (function members), and class can be regarded as an example object, whose copies are called _instances_ of that class.
+Classes in Transd, like in many other languages, are templates for creating objects. An object is, basically, a collection of fields (data members) and methods (function members). A class can be regarded as an example object, whose copies are called _instances_ of that class.
 
 Classes use the same mechanism as modules for restricting access to their members, namely, an access mode for the whole class, and/or an access control list when a more fine grained member access control is needed.
 
@@ -114,11 +145,18 @@ The grammar for declaring a class is as follows:
 
 ```
 [ACCESS_MODE_SPECIFIER] "class" CLASS_NAME ": {" class_definition "}"
-ACCESS_MODE_SPECIFIER := "public " | "secure " | "private "
+ACCESS_MODE_SPECIFIER := "public" | "secure" | "private"
 CLASS_NAME := IDENTIFIER
 class_definition := [member_list] [access_control_list]
-member_list := 
-access_control_list :=
+member_list := member_declaration ["," member_declaration]*
+member_declaration := field_declaration | method_declaration
+field_declaration := FIELD_NAME ":" field_definition
+method_declaration := METHOD_NAME ":" method_definition
+field_definition := 
+access_control_list := ACL_HEADER ": {" acl_rules_list "}"
+ACL_HEADER := "access" ["allow" | "deny"]
+acl_rules_list := acl_rule ["," acl_rule]*
+acl_rule :=  MEMBER_NAME ":" modules_list
 ```
 
 
