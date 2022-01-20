@@ -68,6 +68,8 @@ MainModule: {
 
 [List of main features of language](https://transd.org/highlights.html)
 
+[Quick introduction to Transd](https://github.com/transd-lang/transd/tree/master/QuickIntro)
+
 [Language specification](https://github.com/transd-lang/transd/tree/master/Specification)
 
 [Transd Programming guide](https://transd.org/doc/split/mainguide.html)
