@@ -37,8 +37,10 @@ Every file with Transd program code should contain as the first line of code the
 
 which marks the start of Transd code.
 
+#### Modules
+
 All the code in a Transd program is contained in _modules_. Every Transd program should
-define at least one module:
+define at least one module. The scheme for module definitions is as follows:
 
 ```
 <MODULE_NAME> : {
@@ -51,12 +53,11 @@ A module definition consists of data definitions and function definitions.
 
 #### Fields
 
-Data objects in a module definition are termed "data members", or _fields_. Function
-objects are termed "member functions", or _methods_.
+Data objects in a module definition are termed "data members", or _fields_. 
 
 Fields can be regarded as long-term data storage (variables) in the program: they exist during the whole life-time of the module they contained in. Each field can store only a certain type of data, e.g. strings, or integer numbers. (That is, fields in Transd are typed.) The type is assigned to a field at the spot of its first mentioning in the program (declaration), and this type cannot be changed later. 
 
-A field in module is declared and optionally assigned an initial value as follows:
+A field in a module is declared and optionally assigned an initial value as follows:
 
 ```
 i: Int(), // 'i' is an object of Int() type, but not assigned a value
@@ -68,5 +69,7 @@ str1: "Hello"  // 'str1' has the type String() with the value "Hello"
 
 The language instructions for manipulating data objects are grouped in blocks called procedures, or functions. Since all code in Transd should be contained within some module, functions just as data objects are defined as members of some module. Module's member functions are termed module's _methods_.
 
+
+#### Scoped variables
 
 Apart from module's data members Transd has another kind of variables: _local_, or _scoped_ variables.
