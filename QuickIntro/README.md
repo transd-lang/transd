@@ -1,6 +1,6 @@
 # Quick Introduction to Transd
 
-### "Hello, World!" program
+## "Hello, World!" program
 
 ```
 #lang transd
@@ -37,7 +37,7 @@ Every file with Transd program code should contain as the first line of code the
 
 which marks the start of Transd code.
 
-#### Modules
+### Modules
 
 All the code in a Transd program is contained in _modules_. Every Transd program should
 define at least one module. The scheme for module definitions is as follows:
@@ -51,7 +51,7 @@ A module is a basic building block in the Transd program structure. Modules are 
 
 A module definition consists of data definitions and function definitions.
 
-#### Module fields
+### Module fields
 
 Data objects in a module definition are termed "data members", or _fields_. 
 
@@ -71,7 +71,7 @@ i1: 5,    // 'i1' is an Int() with the value 5
 str1: "Hello"  // 'str1' has the type String() with the value "Hello"
 ```
 
-#### Module methods
+### Module methods
 
 The language instructions for manipulating data objects are grouped in blocks called procedures, or functions. Since all code in Transd should be contained within some module, functions just as data objects are defined as members of some module. Module's member functions are termed module's _methods_.
 
@@ -99,19 +99,17 @@ The detalization of the whole example:
 ```
 meth1 :              // method's name
 (lambda              // the marker of the method's declaration
-// method header (signature)
+// method header (signature):
 par1 Int()           // first parameter
 par2 String()        // second parameter
 -> Int()             // the method's return type
-// method body
+// method body:
 (lout "string parameter: " par2)   // expression
 (lout "num parameter: " par1)      // expression
 (ret (+ 5 par1)))                  // expression
 ```
 
-
-
-#### Scoped variables
+### Scoped variables
 
 Apart from module's data members Transd has another kind of variables: _local_, or _scoped_ variables.
 
@@ -123,14 +121,43 @@ The scoped variables are introduced with the scope operator `(with)`:
 MainModule: {
   someNum: 5,
   _start: (λ
-    (lout "someNum: " someNum)        //<= someNum: 5
+    (lout "someNum is " someNum)        //<= someNum is 5
     (with someNum 25 otherNum 40
         (lout someNum " " otherNum))  //<= 25 40
-    (lout "someNum: " someNum)        //<= someNum: 5
-    (lout "otherNum: " otherNum)      //<= undefined variable!
+    (lout "someNum is " someNum)        //<= someNum is 5
+    (lout "otherNum is " otherNum)      //<= undefined variable!
   )
 }
 ```
 
-The life-time and visibility of scoped variables is confined within the body of the
+The life-time and visibility of scoped variables are confined within the body of the
 scoped operator.
+
+### Built-in functions
+
+In other languages the text of a program often contains a variety of different types of
+syntactical constructions: functions (e.g. `println()`), flow control constructions (`if(){}else{}`), control statements (`return`), infix operators (`a = b`), prefix operators (`NOT c`), and so on.
+
+In Transd all is getting done through a unified syntactic form: function call. The general scheme of a function call is as follows:
+
+```
+"(" <OPERATOR> [OPERAND]* ")"
+```
+
+All the basic language functionality, such as flow control, input/output, etc. is provided via built-in functions.
+
+__Examples__:
+
+```
+(textout "Hello!")   // text output
+(+ 5 7)              // arithmetical operations
+(> b a)              // comparisons
+(= str1 "Hi")        // assignment
+(ret 1)              // return statement
+(if (< a b) (ret 0)) // flow control
+(throw "Error")      // throw statement
+(catch (report @ex)) // catch statement
+(for i in [1,2,3])   // iteration
+```
+
+### Classes
