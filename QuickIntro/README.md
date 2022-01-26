@@ -141,7 +141,7 @@ syntactical constructions: functions (e.g. `println()`), flow control constructi
 In Transd all is getting done through a unified syntactic form: function call. The general scheme of a function call is as follows:
 
 ```
-"(" <OPERATOR> [OPERAND]* ")"
+"(" <OPERATOR> [OPERAND]+ ")"
 ```
 
 All the basic language functionality, such as flow control, input/output, etc. is provided via built-in functions.
@@ -161,3 +161,25 @@ __Examples__:
 ```
 
 ### Classes
+Classes in Transd, like in many other languages, are templates for creating objects. An object is, basically, a collection of fields (data members) and methods (function members). A class can be regarded as an example object, whose copies are called _instances_ of that class.
+
+The general scheme of class definition is as follows:
+
+```
+<CLASS_NAME> ": {"
+   (method_definition | field_definition)+
+"}"
+```
+
+Example:
+
+```
+class Greeter: {
+    greeting: "Hello",
+    say: (λ (textout greeting "!")),
+    setGreeting: (λ s String() (= greeting s))
+}
+```
+
+
+Classes can have
