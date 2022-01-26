@@ -168,7 +168,9 @@ method_body := [method_call]*
 
 
 ## Classes and objects
- Object in Transd is a set of data variables along with set of functions that operate on those variables. From this description one can conclude, that objects and modules in Transd are somewhat similar. And they indeed are similar, the modules being, actually, special objects. The differences of modules from plain objects make them a separate topic of documentation, and what further is said about objects and classes is not neccesseraly relates to modules.
+Transd supports the object-oriented programming style, where programming tasks are treated in terms of objects of various types. An object is, basically, a combination of some data, which describes or models some entity, and a set of rules, or functions, with which this data should be handled. There may be many sorts of such combinations, and each sort is regarded as a separate data type.
+
+In Transd an object is represented as a set of data variables, which may be of various data types, which set is grouped with a set of methods that operate on those variables. From this description one can see, that objects and modules in Transd have a similarity between them, the modules being, actually, special objects. The differences of modules from plain objects make them a separate topic of documentation, and what further is said about objects and classes is not neccesseraly relates to modules.
 
 Classes in Transd, like in many other languages, are templates for creating objects. An object is, basically, a collection of fields (data members) and methods (function members). A class can be regarded as an example object, whose copies are called _instances_ of that class.
 
