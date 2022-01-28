@@ -64,6 +64,37 @@ MainModule: {
 // Output: Hello, World!
 ```
 
+### Built-in data query language
+
+```
+#lang transd
+MainModule : {
+  tabdata:
+    "Name,Salary:Int,Department
+     Alice,10000,IT
+     Susan,25000,HR
+     Bob,30000,Marketing",
+  
+  table: Table(),
+
+   _start: (λ
+    (load-table table tabdata)
+    (build-index table "Salary")
+
+    (with rows (tsd tabl 
+                  select: ["Name", "Department"]
+                  as: [[String(),String()]]
+                  where: "Salary > 20000"
+                  sortby: "Name")
+
+      (for row in rows do (lout row)))
+  	  // OUTPUT:
+          // <= ["Bob", "Marketing"]
+          // <= ["Susan", "HR"]
+   )
+}
+```
+
 ## Documentation (work in progress)
 
 [List of main features of language](https://transd.org/highlights.html)
