@@ -176,10 +176,51 @@ Example:
 ```
 class Greeter: {
     greeting: "Hello",
-    say: (λ (textout greeting "!")),
-    setGreeting: (λ s String() (= greeting s))
+    say: (lambda (textout greeting "!")),
+    setGreeting: (lambda s String() (= greeting s))
 }
 ```
 
 
-Classes can have
+Classes can define a special function called `@init` which is automatically called at
+the creation of a new class object. This function may set initial values for the class
+data members and it can receive arguments:
+
+```
+#lang transd
+
+class PT2 : {
+    x : Double(),
+    y : Double(),
+    @init: (lambda x_ Double() y_ Double() (set x x_) (set y y_)),
+    print: (lambda (lout "x: " x "; y: " y))
+}
+
+MainModule: {	
+    _start: (lambda 
+        (with pt PT2(3.0 5.0)
+	    (print pt)) // <= x: 3.0; y: 5.0
+    )
+}
+```
+
+### Containers
+
+Transd has several data structures for storing collections of values. These data
+structures are called _containers_. Each container stores values of only one type and
+this type is specified when the container is created:
+
+```
+// Vector is a container for storing sequences
+vec: Vector<String>(),
+
+// Container may receive initial values when it's created
+
+vec1: Vector<Int>( [1,2,3,4,5] ),
+
+// Index stores collections of pairs
+
+ind: Index<Int String>( {1:"apple", 2:"pear", 3:"orange"} )
+```
+
+
