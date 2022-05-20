@@ -96,6 +96,7 @@ MainModule : {
 ```
 
 ## Documentation (work in progress)
+[Transd in 5 minutes](https://github.com/transd-lang/transd/tree/master/TransdInFiveMin)
 
 [List of main features of language](https://transd.org/highlights.html)
 
