@@ -215,12 +215,10 @@ this type is specified when the container is created:
 vec: Vector<String>(),
 
 // Container may receive initial values when it's created
-
 vec1: Vector<Int>( [1,2,3,4,5] ),
 
 // Index stores collections of pairs
-
 ind: Index<Int String>( {1:"apple", 2:"pear", 3:"orange"} )
 ```
 
-
+Container have methods for accessing and manipulating their elements.
