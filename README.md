@@ -112,6 +112,8 @@ MainModule : {
 
 [Transd Code Samples](https://transd.org/doc/rosexamp.html)
 
+[Chess Engine in Transd](https://github.com/al-berger/SFTD)
+
 ## REPL command line interpreter
 
 [TREE3](https://github.com/transd-lang/tree3)
