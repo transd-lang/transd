@@ -7,8 +7,7 @@
  * has a very compact implementation (two C++ files with less than 25 KLOCS);
  * uses an innovative execution model - virtual compilation - which doesn't include just-in-time compilation and in the same time offers a good performance.
 
-Currently, Transd is in alpha-stage of development with the planned first 
-beta-release in the first quarter of 2022. The syntax of the language is established. The functionality is ready on  85-90%. (There are many examples of [short programs](https://transd.org/doc/rosexamp.html).)
+The current stage of Transd development is **beta** of the first production version, which is planned for release in the first quarter of 2023.
 
 ## Code snippets
 
